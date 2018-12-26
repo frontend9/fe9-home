@@ -1,5 +1,7 @@
 .layout {
+  position: relative;
   width: 1080px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -27,12 +29,31 @@
   // margin: 12px;
 }
 
+.about {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  line-height: 1.5em;
+  overflow: hidden;
+
+  .heart {
+    margin-right: 20px;
+    float: right;
+  }
+}
+
 .footer {
-  border-top: 1px dotted #495057;
-  text-align: center;
-  padding-top: 12px;
-  font-size: 12px;
-  margin-bottom: 24px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+
+  .copyright {
+    border-top: 1px dotted #495057;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
 }
 
 .card {
