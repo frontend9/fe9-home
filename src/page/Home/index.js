@@ -1,12 +1,12 @@
-import React from 'react';
-import './index.less';
+import React from "react";
+import "./index.less";
 
 export default () => (
   <div className="layout">
     <header className="header">
       <img
         className="logo"
-        src="https://gw.alipayobjects.com/zos/basement_prod/7e436777-0464-43ba-a382-d1f873cbfd06/resource/basement_new_prod/%25E5%2589%258D%25E7%25AB%25AF%25E4%25B9%259D%25E9%2583%25A8.gif"
+        src="//gw.alipayobjects.com/zos/basement_prod/7e436777-0464-43ba-a382-d1f873cbfd06/resource/basement_new_prod/%25E5%2589%258D%25E7%25AB%25AF%25E4%25B9%259D%25E9%2583%25A8.gif"
         alt="frontend_9"
       />
       <div className="desc">
@@ -60,7 +60,7 @@ export default () => (
             <a href="javascrpt:;" className="contact">
               加入我们
               <img
-                src="//img.alicdn.com/tfs/TB1CUUrtAvoK1RjSZPfXXXPKFXa-674-896.jpg"
+                src="//gw.alicdn.com/tfs/TB1R2lhypzqK1RjSZSgXXcpAVXa-674-896.png"
                 alt="联系我"
               />
             </a>
