@@ -19,7 +19,7 @@ export default () => (
         <a href="//github.com/frontend9/fe9-library" className="card">
           → 前往前端九部知识库
         </a>
-        <a href="//github.com/frontend9/fe9-market" className="card">
+        <a href="/market" target="_blank" className="card">
           → 前往前端九部工具库
         </a>
         <a href="//github.com/frontend9/fe9-activity/issues" className="card">
