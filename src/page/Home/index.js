@@ -11,7 +11,7 @@ export default () => (
       />
       <div className="desc">
         <h1>欢迎来到前端九部</h1>
-        <h3>坚持做前端职业教育的指引</h3>
+        <h3>这里有一群热爱前端喜欢分享的码农</h3>
       </div>
     </header>
     <div className="content">
@@ -19,15 +19,15 @@ export default () => (
         <a href="//github.com/frontend9/fe9-library" className="card">
           → 前往前端九部知识库
         </a>
-        <a href="/market" target="_blank" className="card">
-          → 前往前端九部工具库
+        <a href="//www.yuque.com/fe9/basic" className="card">
+          → 前端九部 - 行业入门者手册2019 
         </a>
         <a href="//github.com/frontend9/fe9-activity/issues" className="card">
           → 前往前端九部活动库
         </a>
         <p className="about">
           <p>
-            我们希望做到的事情是前端职业教育的指引，职业教育这件事在国内目前做的并不好，各个行业都不太好，我们的期望，是把我们前端行业的职业教育做好。
+            我们最终希望做到的事情是前端职业教育的指引，职业教育这件事在国内目前做的并不好，各个行业都不太好，我们的期望，是把我们前端行业的职业教育做好。
           </p>
           <br />
           <p>
@@ -53,16 +53,12 @@ export default () => (
           </li>
           <li>
             <a href="//github.com/frontend9/fe9-library/blob/master/MEMBERS.md">
-              编号成员
+              成员名单
             </a>
           </li>
           <li>
-            <a href="javascrpt:;" className="contact">
+            <a href="//github.com/frontend9/fe9-library/blob/master/JOINUS.md" className="contact">
               加入我们
-              <img
-                src="//gw.alicdn.com/tfs/TB1R2lhypzqK1RjSZSgXXcpAVXa-674-896.png"
-                alt="联系我"
-              />
             </a>
           </li>
         </ul>
