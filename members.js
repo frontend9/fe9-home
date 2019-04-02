@@ -85,4 +85,4 @@ window.membersArray = [
     ["守候","https://github.com/frontend9/fe9-library/issues/created_by/chenhuiYj","00084","木羽","2019年2月13日","广州","自由职业"],
     ["渚薰","https://github.com/frontend9/fe9-library","00085","-","2019年2月13日","杭州","阿里"],
     ["邈天","https://github.com/frontend9/fe9-library","00086","-","2019年2月13日","成都","蚂蚁"],
-]);
+]
