@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.less";
+import { Link } from "react-router-dom";
 
 export default () => (
   <div className="layout">
@@ -10,20 +11,26 @@ export default () => (
         alt="frontend_9"
       />
       <div className="desc">
-        <h1>欢迎来到前端九部</h1>
-        <h3>这里有一群热爱前端喜欢分享的码农</h3>
+        <a href="/" className="homeLink">
+          <h1>欢迎来到前端九部</h1>
+          <h3>这里是一群喜欢分享交流的前端码农</h3>
+        </a>
       </div>
     </header>
     <div className="content">
       <div>
+        <Link to="/memberList" className="card">
+          → 前端九部 - 九部成员名册
+        </Link>
+
         <a href="//github.com/frontend9/fe9-library" className="card">
-          → 前往前端九部知识库
+          → 前端九部 - 九部知识库
+        </a>
+        <a href="//github.com/frontend9/fe9-activity/issues" className="card">
+          → 前端九部 - 九部活动库
         </a>
         <a href="//www.yuque.com/fe9/basic" className="card">
           → 前端九部 - 行业入门者手册2019 
-        </a>
-        <a href="//github.com/frontend9/fe9-activity/issues" className="card">
-          → 前往前端九部活动库
         </a>
         <p className="about">
           <p>
