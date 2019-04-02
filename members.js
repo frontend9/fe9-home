@@ -1,4 +1,4 @@
-export default ([
+window.membersArray = [
     ["玉伯","https://github.com/lifesinger","00001","-","2018年7月25日","杭州","蚂蚁"],
     ["cc","https://github.com/frontend9/fe9-library/issues/created_by/acodercc","00002","玉伯","2018年8月14日","杭州","蚂蚁"],
     ["龙茶","https://github.com/frontend9/fe9-library/issues/created_by/focus7eleven","00003","cc","2018年8月20日","杭州","蚂蚁"],
@@ -85,4 +85,4 @@ export default ([
     ["守候","https://github.com/frontend9/fe9-library/issues/created_by/chenhuiYj","00084","木羽","2019年2月13日","广州","自由职业"],
     ["渚薰","https://github.com/frontend9/fe9-library","00085","-","2019年2月13日","杭州","阿里"],
     ["邈天","https://github.com/frontend9/fe9-library","00086","-","2019年2月13日","成都","蚂蚁"],
-]);
+]
