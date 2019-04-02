@@ -1,118 +1,118 @@
-import React from "react";
-import "./index.less";
-import echarts from 'echarts';
+import React from 'react'
+import './index.less'
 
 export default class MemberList extends React.Component {
-
   constructor(props) {
-    super(props);
+    super(props)
   }
+
   componentDidMount() {
-    let myChart = echarts.init(document.getElementById('memberTree'));
+    import('echarts').then(module => {
+      this.initEcharts(module)
+    })
+  }
 
-    let roots = [];
-    let members = [];
-    window.membersArray.map(([nickname, url, number, parentNick, joinDate, city, company]) => {
-      members.push({
-        nickname,
-        url,
-        number,
-        parentNick,
-        joinDate,
-        city,
-        company,
-        children: [],
+  initEcharts = module => {
+    let myChart = module.init(document.getElementById('memberTree'))
 
-        name: nickname + '(' + number + ')',
-        value: url,
-      });
-    });
+    let roots = []
+    let members = []
+    window.membersArray.map(
+      ([nickname, url, number, parentNick, joinDate, city, company]) => {
+        members.push({
+          nickname,
+          url,
+          number,
+          parentNick,
+          joinDate,
+          city,
+          company,
+          children: [],
+
+          name: nickname + '(' + number + ')',
+          value: url
+        })
+      }
+    )
 
     function insertToTree(member, nodes, memberIndex) {
-      let found = false;
+      let found = false
       nodes.map(node => {
         if (node.nickname === member.parentNick) {
-          node.children.push(member);
-          found = true;
-          members.splice(memberIndex, 1);
+          node.children.push(member)
+          found = true
+          members.splice(memberIndex, 1)
         }
-      });
+      })
       if (found === false) {
         nodes.map(node => {
           if (insertToTree(member, node.children, memberIndex)) {
-            found = true;
+            found = true
           }
-        });
+        })
       }
-      return found;
+      return found
     }
 
     for (let i = 0; i < members.length; i++) {
       if (members[i].parentNick === '-') {
-        roots.push(members[i]);
-        members.splice(i, 1);
-        i--;
+        roots.push(members[i])
+        members.splice(i, 1)
+        i--
       }
     }
 
     while (members.length) {
       for (let i = 0; i < members.length; i++) {
         if (insertToTree(members[i], roots, i)) {
-          break;
+          break
         }
       }
     }
 
+    myChart.setOption({
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove',
+        formatter: '{c0}'
+      },
+      series: [
+        {
+          type: 'tree',
 
+          name: 'tree1',
 
-    myChart.setOption(
+          data: [{ name: '成员', children: roots }],
 
-      {
-        tooltip: {
-          trigger: 'item',
-          triggerOn: 'mousemove',
-          formatter: '{c0}',
-        },
-        series: [{
-            type: 'tree',
+          top: '5%',
+          left: '7%',
+          bottom: '2%',
+          right: '7%',
 
-            name: 'tree1',
+          symbol: 'roundRect',
+          symbolSize: 7,
 
-            data: [{name:'成员', children:roots}],
-
-            top: '5%',
-            left: '7%',
-            bottom: '2%',
-            right: '7%',
-
-            symbol: 'roundRect',
-            symbolSize: 7,
-
-            label: {
-              normal: {
-                position: 'right',
-                verticalAlign: 'middle',
-              }
-            },
-
-            initialTreeDepth: -1,
-            expandAndCollapse: true,
-
-            animationDuration: 550,
-            animationDurationUpdate: 750
-
+          label: {
+            normal: {
+              position: 'right',
+              verticalAlign: 'middle'
+            }
           },
-        ]
-      }
-    );
-    myChart.on('click', 'series', params=>{
-      window.open(params.data.url)
-    });
 
+          initialTreeDepth: -1,
+          expandAndCollapse: true,
+
+          animationDuration: 550,
+          animationDurationUpdate: 750
+        }
+      ]
+    })
+    myChart.on('click', 'series', params => {
+      window.open(params.data.url)
+    })
   }
   render() {
-    return ( 
-      
+    return (
       <div className="layout">
         <header className="header">
           <img
@@ -129,8 +129,7 @@ export default class MemberList extends React.Component {
         </header>
         <div className="content">
           <div>
-            <p className="about" id="memberTree">
-            </p>
+            <p className="about" id="memberTree" />
             <ul className="btns">
               <li>
                 <a href="//zhuanlan.zhihu.com/c_1005849602699907072">知乎</a>
@@ -144,7 +143,10 @@ export default class MemberList extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="//github.com/frontend9/fe9-library/blob/master/JOINUS.md" className="contact">
+                <a
+                  href="//github.com/frontend9/fe9-library/blob/master/JOINUS.md"
+                  className="contact"
+                >
                   加入我们
                 </a>
               </li>
@@ -155,8 +157,6 @@ export default class MemberList extends React.Component {
           <p className="copyright">最终解释权归前端九部所有 @frontend_9</p>
         </footer>
       </div>
-      
-    );
-
+    )
   }
 }
