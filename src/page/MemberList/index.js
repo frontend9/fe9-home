@@ -1,9 +1,6 @@
 import React from "react";
 import "./index.less";
 import echarts from 'echarts';
-import { Link } from "react-router-dom";
-import membersArray from './members';
-
 
 export default class MemberList extends React.Component {
 
@@ -15,7 +12,7 @@ export default class MemberList extends React.Component {
 
     let roots = [];
     let members = [];
-    membersArray.map(([nickname, url, number, parentNick, joinDate, city, company]) => {
+    window.membersArray.map(([nickname, url, number, parentNick, joinDate, city, company]) => {
       members.push({
         nickname,
         url,
