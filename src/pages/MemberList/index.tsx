@@ -57,7 +57,21 @@ const MemberList: React.FC = () => {
         },
       ],
     });
-    myChart.on('click', (params: any) => {
+
+    // tree 中的每一个 node 的类型，所以我把类型写在这里
+    type MembersTreeNode =
+      // 根节点是手动写的，类型比较特殊，所以单独拿出来
+      | (typeof membersTree)
+      // 后续的节点的类型
+      | (typeof membersTree)['children'][number];
+
+    // FIXME: 这里没写完整所有类型，应该去补充 ECharts 库的定义来补全所有字段
+    // Click 时候我们会有 data 字段，是 tree 中的每一个 Node
+    type ClickParams = {
+      data: MembersTreeNode;
+    };
+    myChart.on('click', (params: ClickParams) => {
+      console.log(params);
       window.open(params.data.url);
     });
   }, []);

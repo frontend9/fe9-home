@@ -15,7 +15,6 @@ const membersTree = {
         joinDate,
         city,
         company,
-        children: [],
         name: nickname + '(' + number + ')',
         value: url,
       })
