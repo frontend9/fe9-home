@@ -8,8 +8,19 @@ import classes from './index.module.scss';
 import membersTree from '../../members';
 
 const MemberList: React.FC = () => {
-  const chartRef = useRef<HTMLDivElement>((undefined as any) as HTMLDivElement);
+  const chartRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    /**
+     * The function passed to useEffect will run after the render is committed to the screen.
+     *
+     * {@link https://reactjs.org/docs/hooks-reference.html#useeffect | Hooks API Reference useEffect }
+     */
+    if (chartRef.current === null) {
+      // React 可以保证这里不是 null
+      throw new Error(
+        'useEffect fire before the render committed, This may be a bug in React implementation.'
+      );
+    }
     const myChart = echarts.init(chartRef.current);
 
     myChart.setOption({
