@@ -2,6 +2,7 @@
   "name": "frontend_9",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "repository": {
     "type": "git",
     "url": "git@gitlab.alipay-inc.com:frontend_9/frontend_9.git"
