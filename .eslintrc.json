@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "eslint-config-react-app",
+    "eslint-config-prettier",
+    "eslint-config-prettier/@typescript-eslint",
+    "eslint-config-prettier/react"
+  ]
+}
