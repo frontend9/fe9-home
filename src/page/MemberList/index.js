@@ -1,19 +1,18 @@
 import React from 'react'
 import './index.less'
-
+import * as echarts from 'echarts/lib/echarts';
+import 'echarts/lib/chart/tree';
 export default class MemberList extends React.Component {
   constructor(props) {
     super(props)
   }
 
   componentDidMount() {
-    import('echarts').then(module => {
-      this.initEcharts(module)
-    })
+    this.initEcharts();
   }
 
-  initEcharts = module => {
-    let myChart = module.init(document.getElementById('memberTree'))
+  initEcharts = () => {
+    let myChart = echarts.init(document.getElementById('memberTree'))
 
     let roots = []
     let members = []
