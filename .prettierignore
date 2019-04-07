@@ -1,2 +1,4 @@
 dist
+build
 coverage
+src/members.json

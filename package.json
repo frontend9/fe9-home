@@ -13,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "bundle-analyzer": "react-scripts build --stats && webpack-bundle-analyzer build/bundle-stats.json",
-    "commit": "git-cz"
+    "commit": "lint-staged && git-cz"
   },
   "dependencies": {
     "array-to-tree": "^3.3.0",
@@ -33,6 +33,8 @@
     "commitizen": "^3.0.7",
     "cz-moe": "^0.0.2",
     "eslint-config-prettier": "^4.1.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
     "node-sass": "^4.11.0",
     "prettier": "^1.16.4",
     "react-scripts": "3.0.0-next.b0cbf2ca",
