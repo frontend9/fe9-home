@@ -43,6 +43,6 @@
     "stylelint-scss": "^3.5.4",
     "typescript": "3.4.2",
     "typescript-plugin-css-modules": "^1.0.5",
-    "webpack-bundle-analyzer": "^3.2.0"
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }
